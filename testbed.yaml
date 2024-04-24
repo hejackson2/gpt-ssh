@@ -1,0 +1,36 @@
+testbed:
+  name: MyTestbed
+  credentials:
+    default:
+      username: "user"
+      password: "cisco"
+
+devices:
+  iol-l2-0:
+    type: router
+    os: ios
+    connections:
+      cli:
+        protocol: ssh
+        ip: "192.168.203.138"
+  iosv-0:
+    type: router
+    os: ios
+    connections:
+      cli:
+        protocol: ssh
+        ip: "192.168.203.139"
+  iol-0:
+    type: router
+    os: ios
+    connections:
+      cli:
+        protocol: ssh
+        ip: "192.168.203.140"
+  iol-1:
+    type: router
+    os: ios
+    connections:
+      cli:
+        protocol: ssh
+        ip: "192.168.203.141"
