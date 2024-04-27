@@ -18,7 +18,14 @@ def ssh_connect_run_commands(device, commands):
     # child.logfile = sys.stdout.buffer
 
     try:
-        child.expect('assword:')
+        index_pattern = child.expect(['continue connecting (yes/no)',
+                                      'assword:')]
+
+        if index_pattern == 0:
+            # new host key
+            child.sendline('yes')
+            child.expect('assword:')
+
         child.sendline(password)
         child.expect('#')
 
